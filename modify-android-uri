@@ -1,0 +1,5 @@
+#! /bin/sh
+
+sed -e \
+  "s|name=\"uri\">http://app.example.com|name=\"uri\">$1|" \
+  res/values/strings.xml -i
