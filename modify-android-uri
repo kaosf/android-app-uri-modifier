@@ -1,5 +1,11 @@
 #! /bin/sh
 
+if [ $# -lt 1 ]
+then
+  echo '1 argument (url) is required.' 1>&2
+  exit 1
+fi
+
 sed -e \
   "s|name=\"uri\">http://app.example.com|name=\"uri\">$1|" \
   res/values/strings.xml -i
